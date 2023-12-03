@@ -23,9 +23,17 @@ public class TestPregunta2 {
             int[] A = GenerarArreglos.generarArreglo(n);
             List<Integer> numeros = new ArrayList<>(Arrays.asList(Arrays.stream(A).boxed().toArray(Integer[]::new)));
 
+            long inicio = System.currentTimeMillis();
+
             var modaDivideYVenceras = quickSortModa.encontrarModa(numeros);
             var modaJavaList = modaJava.encontrarModas(A);
 
+            long fin = System.currentTimeMillis();
+
+            // Se calcula el tiempo transcurrido
+            double tiempo = (fin - inicio) / 1000.0;
+
+            System.out.printf("El tiempo de ejecucion para n = %d fue de %.6f segundos%n", n, tiempo);
             assertTrue(modaDivideYVenceras.containsAll(modaJavaList));
         }
     }
