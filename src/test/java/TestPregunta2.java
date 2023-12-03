@@ -1,48 +1,32 @@
-import org.ada.Pregunta2.EncontrarModa;
+import org.ada.Pregunta2.QuickSortModa;
+import org.ada.Pregunta2.ModaJava;
 import org.ada.commons.GenerarArreglos;
-import org.apache.commons.math3.stat.Frequency;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestPregunta2 {
     @Test
-    // Se genera un arreglo aleatorio de tamaño n
-    public void EncontrarModa(){
-        EncontrarModa encontrarModa= new EncontrarModa();
-        for (int n : new int[]{10, 100, 1000}) {
+    @DisplayName("PREGUNTA 2: Prueba de QuickSortModa para encontrar la moda de arreglos de tamanio n")
+    public void testEncontrarModa() {
 
+        QuickSortModa quickSortModa = new QuickSortModa();
+        ModaJava modaJava = new ModaJava();
+        for (int n : new int[]{10, 100, 1000, 10000}) {
 
-            // Se genera un arreglo aleatorio de tamaño n
             int[] A = GenerarArreglos.generarArreglo(n);
+            List<Integer> numeros = new ArrayList<>(Arrays.asList(Arrays.stream(A).boxed().toArray(Integer[]::new)));
 
-            // Se mide el tiempo inicial
-            long inicio = System.currentTimeMillis();
+            var modaDivideYVenceras = quickSortModa.encontrarModa(numeros);
+            var modaJavaList = modaJava.encontrarModas(A);
 
-            // Se aplica el algoritmo para encontrar la moda
-            int[] moda = encontrarModa.encontrarModa(A, 0, n - 1);
-
-
-            assertEquals(moda[0], moda[0]);
-            // Se mide el tiempo final
-            long fin = System.currentTimeMillis();
-
-            // Se calcula el tiempo transcurrido
-            double tiempo = (fin - inicio) / 1000.0; // Convertir a segundos
-
-            // Se imprime el resultado
-            System.out.printf("El tiempo de ejecución para n = %d fue de %.6f segundos%n", n, tiempo);
-            System.out.printf("La moda es %s y se repite veces%n", Arrays.toString(moda));
+            assertTrue(modaDivideYVenceras.containsAll(modaJavaList));
         }
-
-
-        // Contar la frecuencia de cada elemento en el arreglo
-
-
-        // Encontrar el modo
-
     }
 }

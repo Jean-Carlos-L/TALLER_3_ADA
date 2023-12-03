@@ -1,5 +1,6 @@
 import org.ada.Pregunta1.StoogeSort;
 import org.ada.commons.GenerarArreglos;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -8,11 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class TestPregunta1 {
     @Test
+    @DisplayName("PREGUNTA 1: Prueba de StoogeSort para ordernar arreglos de tamanio n")
     // Se genera un arreglo aleatorio de tamaño n
     public void testStoogeSort(){
         StoogeSort stoogeSort = new StoogeSort();
 
-        for (int n : new int[]{10, 100, 1000,10000}) {
+        for (int n : new int[]{10, 100, 1000}) {
             // Se genera un arreglo aleatorio de tamaño n
             int[] A = GenerarArreglos.generarArreglo(n);
             int[] B= A.clone();

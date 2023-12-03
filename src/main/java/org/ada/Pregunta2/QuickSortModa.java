@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Intento2 {
+public class QuickSortModa {
     public List<Integer> quicksort(List<Integer> arr) {
         if (arr.size() <= 1) {
             return arr;

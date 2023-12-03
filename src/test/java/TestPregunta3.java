@@ -1,5 +1,6 @@
 import org.ada.Pregunta3.CompaAlgoritmos;
 import org.ada.commons.GenerarArreglos;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ public class TestPregunta3 {
     CompaAlgoritmos compaAlgoritmos = new CompaAlgoritmos();
     int [] valoresPrueba = {10,10,10,50,50,50,100,100,100,500,500,500, 1000,1000,1000,2000,2000,2000,5000,5000,5000,10000,10000,10000};
     @Test
+    @DisplayName("PREGUNTA 3: Prueba de QuickSort para calcular tiempo de ejecucion para arreglos de tamanio n")
     public void testQuickSort(){
         for (int n: valoresPrueba) {
             int[] A = GenerarArreglos.generarArreglo(n);
@@ -25,6 +27,7 @@ public class TestPregunta3 {
         }
     }
     @Test
+    @DisplayName("PREGUNTA 3: Prueba de InsertSort para calcular tiempo de ejecucion para arreglos de tamanio n")
     public void testInsertSort(){
         for (int n: valoresPrueba) {
             int[] A = GenerarArreglos.generarArreglo(n);
@@ -39,6 +42,7 @@ public class TestPregunta3 {
         }
     }
     @Test
+    @DisplayName("PREGUNTA 3: Prueba de MergeSort para calcular tiempo de ejecucion para arreglos de tamanio n")
     public void testMergeSort(){
 for (int n: valoresPrueba) {
             int[] A = GenerarArreglos.generarArreglo(n);
