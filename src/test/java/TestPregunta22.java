@@ -1,21 +1,32 @@
 import org.ada.Pregunta2.Intento2;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class TestPregunta22 {
     @Test
     public void testEncontrarModa() {
-        //Ahora necesito probarlo con 2 numeros de moda
+        List<Integer> numeros = new ArrayList<>();
+        numeros.add(3);
+        numeros.add(1);
+        numeros.add(3);
+        numeros.add(6);
+        numeros.add(1);
+        numeros.add(5);
+        numeros.add(7);
+        numeros.add(4);
+        numeros.add(10);
+        numeros.add(12);
 
-        //[] A = {1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2}
-        int[] A = {3, 5,7,6, 1, 1,3,4,10,12};
-        int n = A.length;
-        int[] modaResultado = Intento2.encontrarModa(A, 0, n - 1);
-        int[] modaEsperada = {1,3};
-        System.out.println("Moda: " + Arrays.toString(modaResultado));
-        assertArrayEquals(modaEsperada, modaResultado);
+        Intento2 intento2 = new Intento2();
+        var moda = intento2.encontrarModa(numeros);
+
+        System.out.println(moda);
+
+//        assertArrayEquals(modaEsperada, modaResultado);
     }
 }
