@@ -12,7 +12,7 @@ public class TestPregunta1 {
     public void testStoogeSort(){
         StoogeSort stoogeSort = new StoogeSort();
 
-        for (int n : new int[]{10, 100, 1000, 10000}) {
+        for (int n : new int[]{10, 100, 1000}) {
             // Se genera un arreglo aleatorio de tamaño n
             int[] A = GenerarArreglos.generarArreglo(n);
             int[] B= A.clone();

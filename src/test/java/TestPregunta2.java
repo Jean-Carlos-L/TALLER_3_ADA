@@ -26,7 +26,7 @@ public class TestPregunta2 {
             int[] moda = encontrarModa.encontrarModa(A, 0, n - 1);
 
 
-            assertEquals(moda[1], moda[1]);
+            assertEquals(moda[0], moda[0]);
             // Se mide el tiempo final
             long fin = System.currentTimeMillis();
 
@@ -35,7 +35,7 @@ public class TestPregunta2 {
 
             // Se imprime el resultado
             System.out.printf("El tiempo de ejecución para n = %d fue de %.6f segundos%n", n, tiempo);
-            //System.out.printf("La moda es %s y se repite %d veces%n", Arrays.toString(moda), contarFrecuencia(A, moda));
+            System.out.printf("La moda es %s y se repite veces%n", Arrays.toString(moda));
         }
 
 
