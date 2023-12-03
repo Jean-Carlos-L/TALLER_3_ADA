@@ -12,7 +12,7 @@ public class TestPregunta1 {
     public void testStoogeSort(){
         StoogeSort stoogeSort = new StoogeSort();
 
-        for (int n : new int[]{10, 100, 1000}) {
+        for (int n : new int[]{10, 100, 1000,10000}) {
             // Se genera un arreglo aleatorio de tamaño n
             int[] A = GenerarArreglos.generarArreglo(n);
             int[] B= A.clone();
@@ -31,7 +31,7 @@ public class TestPregunta1 {
             double tiempo = (fin - inicio) / 1000.0; // Convertir a segundos
 
             // Se imprime el resultado
-            System.out.printf("El tiempo de ejecución para n = %d fue de %.6f segundos%n", n, tiempo);
+            System.out.printf("El tiempo de ejecucion para n = %d fue de %.6f segundos%n", n, tiempo);
         }
     }
 
